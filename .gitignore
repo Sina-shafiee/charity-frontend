@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# codegen
+/src/types/api/*.d.ts
+*spec.yaml
+
+# env
+.env
+.env.*

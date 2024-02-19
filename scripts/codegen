@@ -1,0 +1,64 @@
+#!/usr/bin/env sh
+
+INPUT_YAML="./api-spec.yaml"
+OUTPUT="./src/types/api"
+
+# Function to display loading indicator
+show_loading() {
+    echo -n "Fetching OpenAPI spec... "
+    while :; do
+        echo -n "."
+        sleep 1
+    done
+}
+
+# Function to stop loading indicator
+stop_loading() {
+    echo " done"
+}
+
+# Function to display start message
+show_start_message() {
+    echo "Starting process..."
+}
+
+# Function to display end message
+show_end_message() {
+    echo "Process completed successfully."
+}
+
+# Function to display error message
+show_error() {
+    echo "Error: $1"
+    exit 1
+}
+
+# Fetch OpenAPI spec
+show_loading &
+
+# Capture the PID of the loading indicator
+LOADING_PID=$!
+
+curl -o $INPUT_YAML $OPEN_API_SPEC_URL >/dev/null 2>&1
+
+# Check if curl command was successful
+if [ $? -ne 0 ]; then
+    stop_loading
+    show_error "Failed to fetch OpenAPI spec."
+fi
+
+# Stop loading indicator
+kill $LOADING_PID >/dev/null 2>&1
+
+# Generate types from OpenAPI spec
+pnpm exec openapi-typescript $INPUT_YAML -o $OUTPUT/schema.d.ts >/dev/null 2>&1
+
+# Check if generation was successful
+if [ $? -ne 0 ]; then
+    stop_loading
+    show_error "Failed to generate types from OpenAPI spec."
+fi
+
+# Display end message
+stop_loading
+show_end_message
