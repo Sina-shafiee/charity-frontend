@@ -1,5 +1,13 @@
 {
-	"name": "portfolio-front-end",
+	"name": "ali-baba-frontend",
+	"author": {
+		"name": "Sina Shafiee",
+		"email": "alisinashafieezada@gmail.com"
+	},
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/Sina-shafiee/alibaba-frontend"
+	},
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
