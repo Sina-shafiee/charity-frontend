@@ -1,10 +1,10 @@
-import { FC, ReactNode } from "react";
-
 import "@/styles/globals.css";
 
-type Props = {
+import type { FC, ReactNode } from "react";
+
+interface Props {
 	children: ReactNode;
-};
+}
 
 const RootLayout: FC<Props> = ({ children }) => {
 	return (
