@@ -8,7 +8,10 @@
 		"start": "next start",
 		"lint": "next lint",
 		"prepare": "husky",
-		"format": "prettier src/**/*.{ts,tsx} --write"
+		"format": "prettier src/**/*.{ts,tsx} --write",
+		"commit": "git-cz",
+		"commitlint": "commitlint --edit",
+		"commitizen": "exec < /dev/tty && git cz --hook || true"
 	},
 	"dependencies": {
 		"next": "14.1.0",
