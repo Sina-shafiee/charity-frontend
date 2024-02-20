@@ -26,6 +26,7 @@ const config: Config = {
 			},
 			fontFamily: {
 				body: "var(--font-body)",
+				heading: "var(--font-heading)",
 			},
 		},
 	},
