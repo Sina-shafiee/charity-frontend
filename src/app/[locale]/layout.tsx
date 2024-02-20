@@ -43,7 +43,7 @@ const fonts: Record<Direction, Fonts> = {
 	ltr: { body: montserratFont, heading: playFair },
 };
 
-const RootLayout: FC<Props> = ({ children, params: { locale } }) => {
+const MainLayout: FC<Props> = ({ children, params: { locale } }) => {
 	const direction = getDirection(locale);
 	const font = fonts[direction];
 	return (
@@ -56,4 +56,4 @@ const RootLayout: FC<Props> = ({ children, params: { locale } }) => {
 		</html>
 	);
 };
-export default RootLayout;
+export default MainLayout;
