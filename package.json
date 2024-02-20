@@ -1,12 +1,12 @@
 {
-	"name": "ali-baba-frontend",
+	"name": "charity-frontend",
 	"author": {
 		"name": "Sina Shafiee",
 		"email": "alisinashafieezada@gmail.com"
 	},
 	"license": "MIT",
 	"repository": {
-		"url": "https://github.com/Sina-shafiee/alibaba-frontend"
+		"url": "https://github.com/Sina-shafiee/charity-frontend"
 	},
 	"version": "0.1.0",
 	"private": true,
