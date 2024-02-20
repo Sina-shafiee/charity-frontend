@@ -12,5 +12,7 @@ module.exports = init({
 			resolverProject: "./tsconfig.json",
 		},
 	},
-	rules: {},
+	rules: {
+		"@typescript-eslint/no-unnecessary-condition": "off",
+	},
 });
