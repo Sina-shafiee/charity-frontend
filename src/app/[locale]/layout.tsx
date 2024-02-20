@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { Montserrat } from "next/font/google";
 import type { FC, ReactNode } from "react";
 
-import { useDirection } from "@/hooks/useDirection";
+import { getDirection } from "@/lib/i18n";
 import type { Locales } from "@/locales";
 
 const montserratFont = Montserrat({
@@ -17,9 +17,12 @@ interface Props {
 }
 
 const RootLayout: FC<Props> = ({ children, params: { locale } }) => {
-	const direction = useDirection();
 	return (
-		<html lang={locale} className={montserratFont.className} dir={direction}>
+		<html
+			lang={locale}
+			className={montserratFont.className}
+			dir={getDirection(locale)}
+		>
 			<body>{children}</body>
 		</html>
 	);
