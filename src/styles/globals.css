@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	body {
+		@apply max-w-[1720px] mx-auto;
+	}
+}
+
+/* Fix for logo.svg's color dark light switch */
+.logo_svg__path1 {
+	@apply fill-red-500 stroke-red-500 dark:fill-blue-600 dark:stroke-blue-600;
+}
