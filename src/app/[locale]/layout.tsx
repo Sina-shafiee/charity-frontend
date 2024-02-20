@@ -1,6 +1,11 @@
 import "@/styles/globals.css";
 
-import { Montserrat, Playfair_Display, Vazirmatn } from "next/font/google";
+import {
+	Alexandria,
+	Montserrat,
+	Playfair_Display,
+	Vazirmatn,
+} from "next/font/google";
 import type { FC, ReactNode } from "react";
 
 import type { Direction } from "@/lib/i18n";
@@ -25,6 +30,12 @@ const vazirMatn = Vazirmatn({
 	variable: "--font-body",
 });
 
+const alexandria = Alexandria({
+	subsets: ["arabic"],
+	weight: ["600", "700"],
+	variable: "--font-heading",
+});
+
 interface Props {
 	children: ReactNode;
 	params: { locale: Locales };
@@ -39,7 +50,7 @@ interface Fonts {
 }
 
 const fonts: Record<Direction, Fonts> = {
-	rtl: { body: vazirMatn, heading: playFair },
+	rtl: { body: vazirMatn, heading: alexandria },
 	ltr: { body: montserratFont, heading: playFair },
 };
 
