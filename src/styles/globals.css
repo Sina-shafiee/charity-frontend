@@ -19,7 +19,7 @@
 		--card: 0 0% 100%;
 		--card-foreground: 222.2 47.4% 11.2%;
 
-		--primary: 222.2 47.4% 11.2%;
+		--primary: 166 65% 37%;
 		--primary-foreground: 210 40% 98%;
 
 		--secondary: 210 40% 96.1%;
@@ -110,5 +110,5 @@
 
 /* Fix for logo.svg's color dark light switch */
 .logo_svg__path1 {
-	@apply fill-red-500 stroke-red-500 dark:fill-blue-600 dark:stroke-blue-600;
+	@apply fill-red-600 stroke-red-600 dark:fill-blue-600 dark:stroke-blue-600;
 }
