@@ -5,7 +5,9 @@ import { locales } from "@/locales";
 
 const i18nMiddleware = createMiddleware({
 	locales,
-	defaultLocale: "en",
+	defaultLocale: "fa",
+	localeDetection: true,
+	localePrefix: "always",
 });
 
 export const middleware = (req: NextRequest) => {
