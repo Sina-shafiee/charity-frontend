@@ -10,6 +10,8 @@ import type { Direction } from "@/hooks";
 import { useDirection } from "@/hooks";
 import type { Locales } from "@/locales";
 
+import Providers from "../providers";
+
 const montserratFont = Montserrat({
 	subsets: ["latin"],
 	weight: ["400", "500"],
@@ -55,13 +57,16 @@ const fonts: Record<Direction, Fonts> = {
 const MainLayout: FC<Props> = ({ children, params: { locale } }) => {
 	const direction = useDirection();
 	const font = fonts[direction];
+
 	return (
 		<html
 			lang={locale}
 			className={`${font.body.variable} ${font.heading.variable}`}
 			dir={direction}
 		>
-			<body className="font-body">{children}</body>
+			<body className="font-body">
+				<Providers>{children}</Providers>
+			</body>
 		</html>
 	);
 };
