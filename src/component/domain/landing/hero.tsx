@@ -1,13 +1,14 @@
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import LeftPath from "@/component/icon/hero-left-path.svg";
 import RightPath from "@/component/icon/hero-right-path.svg";
 import { Button } from "@/component/ui";
+import { useIsRTL } from "@/hooks";
 import { Link } from "@/navigation";
 import { cn } from "@/utils";
 
 export const Hero = () => {
-	const isRtl = useLocale() === "fa";
+	const isRtl = useIsRTL();
 	const t = useTranslations("Index.Hero");
 
 	return (

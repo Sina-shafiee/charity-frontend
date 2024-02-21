@@ -8,8 +8,8 @@ import {
 } from "next/font/google";
 import type { FC, ReactNode } from "react";
 
-import type { Direction } from "@/lib/i18n";
-import { getDirection } from "@/lib/i18n";
+import type { Direction } from "@/hooks";
+import { useDirection } from "@/hooks";
 import type { Locales } from "@/locales";
 
 const montserratFont = Montserrat({
@@ -55,7 +55,7 @@ const fonts: Record<Direction, Fonts> = {
 };
 
 const MainLayout: FC<Props> = ({ children, params: { locale } }) => {
-	const direction = getDirection(locale);
+	const direction = useDirection();
 	const font = fonts[direction];
 	return (
 		<html
