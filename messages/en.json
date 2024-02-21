@@ -13,6 +13,10 @@
 		"causes": "Causes",
 		"about": "About",
 		"contact": "Contact",
-		"blog": "Blogs"
+		"blog": "Blogs",
+		"Language": {
+			"farsi": "Farsi",
+			"english": "English"
+		}
 	}
 }

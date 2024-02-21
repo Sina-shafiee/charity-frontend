@@ -24,3 +24,23 @@ export const navbarLinks = [
 export type NavbarLink = Omit<(typeof navbarLinks)[number], "i18nKey"> & {
 	title: string;
 };
+
+interface Language {
+	lang: string;
+	i18nKey: string;
+}
+
+export const languages: Language[] = [
+	{
+		lang: "fa",
+		i18nKey: "farsi",
+	},
+	{
+		lang: "en",
+		i18nKey: "english",
+	},
+];
+
+export type TranslatedLanguage = Omit<(typeof languages)[number], "i18nKey"> & {
+	title: string;
+};
