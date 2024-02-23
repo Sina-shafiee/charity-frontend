@@ -1,4 +1,4 @@
-import { About, Hero } from "@/component/domain/landing";
+import { About, Causes, Hero } from "@/component/domain/landing";
 import { Welcome } from "@/component/domain/landing/welcome";
 import { getI18n } from "@/locale/server";
 
@@ -9,6 +9,7 @@ const LandingPage = async () => {
 			<Hero />
 			<About />
 			<Welcome />
+			<Causes />
 			<div className="mt-10" />
 			<p className="container text-justify ">
 				{t("lorem")}
