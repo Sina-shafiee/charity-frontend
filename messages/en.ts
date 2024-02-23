@@ -38,6 +38,10 @@ export default {
 				"5": "Protecting them from war and inhumanity.",
 			},
 		},
+		Causes: {
+			title: "Latest Causes",
+			subTitle: "Find the popular cause",
+		},
 	},
 	Navbar: {
 		home: "Home",
@@ -52,4 +56,15 @@ export default {
 	},
 	lorem:
 		"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor sed quam at tempus. Nunc in diam eu sapien scelerisque scelerisque. Maecenas in fringilla libero. Phasellus auctor pulvinar nulla vel maximus. Etiam dignissim erat turpis, quis venenatis quam fermentum et. Donec id justo est. Donec placerat egestas placerat. Praesent convallis scelerisque ante id ullamcorper.",
+
+	DummyCard: {
+		category: "Medical",
+		title: "Donate for the Treatment of Underprivileged Children",
+		content:
+			"Your contribution can change lives. By donating to our cause, you're providing essential medical treatment to children in need, offering them hope and a chance for a brighter future.",
+		donation: "Donations",
+		raised: "Raised: $600",
+		goal: "Goal: $1,000",
+		donate: "Donate Now!",
+	},
 } as const;
