@@ -1,6 +1,7 @@
 "use client";
 
-import { Link } from "@/navigation";
+import Link from "next/link";
+
 import type { NavbarLink } from "@/utils/constant";
 
 interface Props {

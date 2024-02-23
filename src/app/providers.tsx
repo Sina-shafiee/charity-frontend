@@ -3,15 +3,15 @@
 import { DirectionProvider } from "@radix-ui/react-direction";
 import type { ReactNode } from "react";
 
-import { useDirection } from "@/hooks";
+import type { Direction } from "./[locale]/layout";
 
 interface Props {
 	children: ReactNode;
+	dir: Direction;
 }
 
-const Providers = ({ children }: Props) => {
-	const direction = useDirection();
-	return <DirectionProvider dir={direction}>{children}</DirectionProvider>;
+const Providers = ({ children, dir }: Props) => {
+	return <DirectionProvider dir={dir}>{children}</DirectionProvider>;
 };
 
 export default Providers;

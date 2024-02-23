@@ -1,13 +1,13 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 
 import AboutPicOne from "@/assets/about-s-p1.jpg";
 import AboutPicTwo from "@/assets/about-s-p2.jpg";
 import LineIcon from "@/component/icon/line.svg";
 import { Button } from "@/component/ui";
+import { getScopedI18n } from "@/locale/server";
 
-export const About = () => {
-	const t = useTranslations("Index.About");
+export const About = async () => {
+	const t = await getScopedI18n("Index.About");
 	return (
 		<section className="container mt-[7.5rem] grid grid-cols-12 gap-[3.75rem]">
 			<section className="col-span-7 grid h-full grid-cols-4 grid-rows-3 place-content-center">

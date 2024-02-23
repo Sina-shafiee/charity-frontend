@@ -1,13 +1,14 @@
-import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 import Logo from "@/component/icon/logo.svg";
+import { getScopedI18n } from "@/locale/server";
 import { languages, navbarLinks } from "@/utils/constant";
 
 import { LanguageSelect } from "./languageSelect";
 import { Navbar } from "./navbar";
 
-export const Header = () => {
-	const t = useTranslations("Navbar");
+export const Header = async () => {
+	const t = await getScopedI18n("Navbar");
 	/**
 	 * i dont want to use "useTranslations" hook in
 	 * client components and since functions are not serilaized
@@ -27,7 +28,9 @@ export const Header = () => {
 	return (
 		<header className="container relative mx-auto">
 			<div className="p-container absolute left-0 top-0 z-30 mx-auto mt-[35px] flex h-12 w-full items-center justify-between text-white">
-				<Logo className="h-[33px] w-[133px]" />
+				<Link href="/">
+					<Logo className="h-[33px] w-[133px]" />
+				</Link>
 				<Navbar links={translatedLinks} />
 				<LanguageSelect languages={translatedLanguages} />
 			</div>

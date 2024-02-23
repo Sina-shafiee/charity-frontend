@@ -6,9 +6,8 @@ import {
 } from "next/font/google";
 import type { FC, ReactNode } from "react";
 
-import type { Direction } from "@/hooks";
-import { useDirection } from "@/hooks";
-import type { Locales } from "@/locales";
+import type { Direction } from "@/locale/helper";
+import { directions } from "@/locale/helper";
 
 import Providers from "../providers";
 
@@ -38,7 +37,7 @@ const alexandria = Alexandria({
 
 interface Props {
 	children: ReactNode;
-	params: { locale: Locales };
+	params: { locale: string };
 }
 
 interface VariableFont {
@@ -55,17 +54,17 @@ const fonts: Record<Direction, Fonts> = {
 };
 
 const MainLayout: FC<Props> = ({ children, params: { locale } }) => {
-	const direction = useDirection();
-	const font = fonts[direction];
+	const dir = directions[locale] ?? "ltr";
+	const font = fonts[dir];
 
 	return (
 		<html
 			lang={locale}
 			className={`${font.body.variable} ${font.heading.variable}`}
-			dir={direction}
+			dir={dir}
 		>
 			<body className="font-body">
-				<Providers>{children}</Providers>
+				<Providers dir={dir}>{children}</Providers>
 			</body>
 		</html>
 	);
