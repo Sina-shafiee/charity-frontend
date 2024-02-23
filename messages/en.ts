@@ -53,6 +53,7 @@ export default {
 			farsi: "Farsi",
 			english: "English",
 		},
+		login: "login",
 	},
 	lorem:
 		"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor sed quam at tempus. Nunc in diam eu sapien scelerisque scelerisque. Maecenas in fringilla libero. Phasellus auctor pulvinar nulla vel maximus. Etiam dignissim erat turpis, quis venenatis quam fermentum et. Donec id justo est. Donec placerat egestas placerat. Praesent convallis scelerisque ante id ullamcorper.",

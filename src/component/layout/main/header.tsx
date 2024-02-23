@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Logo from "@/component/icon/logo.svg";
+import { Button } from "@/component/ui";
 import { getScopedI18n } from "@/locale/server";
 import { languages, navbarLinks } from "@/utils/constant";
 
@@ -32,7 +33,13 @@ export const Header = async () => {
 					<Logo className="h-[33px] w-[133px]" />
 				</Link>
 				<Navbar links={translatedLinks} />
-				<LanguageSelect languages={translatedLanguages} />
+				<div className="flex items-center gap-4">
+					<Button size="sm" className="text-base">
+						{t("login")}
+					</Button>
+
+					<LanguageSelect languages={translatedLanguages} />
+				</div>
 			</div>
 		</header>
 	);
