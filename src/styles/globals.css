@@ -106,6 +106,10 @@
 	p {
 		@apply text-base font-normal leading-6 font-body;
 	}
+
+	.p-container {
+		@apply p-[1rem] sm:p-[1rem] md:p-[1.5rem] lg:p-[2rem] xl:p-[2.5rem];
+	}
 }
 
 /* Fix for logo.svg's color dark light switch */

@@ -26,7 +26,7 @@ export const Header = () => {
 	});
 	return (
 		<header className="container relative mx-auto">
-			<div className="absolute left-0 top-0 z-30 mt-[35px] flex h-12 w-full items-center justify-between text-white">
+			<div className="p-container absolute left-0 top-0 z-30 mx-auto mt-[35px] flex h-12 w-full items-center justify-between text-white">
 				<Logo className="h-[33px] w-[133px]" />
 				<Navbar links={translatedLinks} />
 				<LanguageSelect languages={translatedLanguages} />
