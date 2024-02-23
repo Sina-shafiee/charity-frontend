@@ -5,7 +5,7 @@
 @layer base {
 	:root {
 		--background: 0 0% 100%;
-		--foreground: 222.2 47.4% 11.2%;
+		--foreground: 0 0% 27%;
 
 		--muted: 210 40% 96.1%;
 		--muted-foreground: 215.4 16.3% 46.9%;
@@ -151,4 +151,14 @@ body {
 
 *::-webkit-scrollbar-thumb:active {
 	background-color: #2ad093;
+}
+
+/* About section children grid areas */
+
+.grid-about-start {
+	grid-area: 1 / 1 / 4 / 4;
+}
+
+.grid-about-end {
+	grid-area: 2 / 2 / 5 / 5;
 }

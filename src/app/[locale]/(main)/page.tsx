@@ -1,19 +1,10 @@
-import { useTranslations } from "next-intl";
+import { About } from "@/component/domain/landing";
 
 const LandingPage = () => {
-	const t = useTranslations();
 	return (
-		<section className="container min-h-screen py-12 text-justify">
-			{t("lorem")}
-			{t("lorem")}
-			{t("lorem")}
-			{t("lorem")}
-			{t("lorem")}
-			{t("lorem")}
-			{t("lorem")}
-			{t("lorem")}
-			{t("lorem")}
-		</section>
+		<main>
+			<About />
+		</main>
 	);
 };
 
