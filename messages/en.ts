@@ -14,6 +14,30 @@ export default {
 				"The secret to happiness lies in helping others. Never underestimate the difference YOU can make in the lives of the poor, the abused and the helpless.",
 			"read-more": "Read More",
 		},
+		Welcome: {
+			title: "Welcome to Charity",
+			heading: "Let's Make a Difference Together",
+			content:
+				"Welcome to Charity, where every action creates a brighter future. Join us to uplift communities, inspire hope, and effect lasting change.",
+			Mission: {
+				title: "Mission",
+				content:
+					"Creating a bright future for children and protecting them from a drought-stricken world.",
+			},
+			Vision: {
+				title: "Our Vision",
+				content: "Committed to a just society where all needs are met.",
+			},
+			Donations: "Donations",
+			Medical_Help: "Medical Help",
+			Missions: {
+				"1": "Together, we will create a brighter future.",
+				"2": "Meeting all children's needs.",
+				"3": "Protecting them from drought.",
+				"4": "Starting to change the world.",
+				"5": "Protecting them from war and inhumanity.",
+			},
+		},
 	},
 	Navbar: {
 		home: "Home",
