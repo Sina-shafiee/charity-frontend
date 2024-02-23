@@ -10,7 +10,7 @@ import { getScopedI18n } from "@/locale/server";
 export const Welcome = async () => {
 	const t = await getScopedI18n("Index.Welcome");
 	return (
-		<section className="container mx-auto mt-[7.5rem] grid grid-cols-12 gap-10">
+		<section className="container mx-auto mt-[7.5rem] grid grid-cols-12 gap-[3.75rem]">
 			<section className="col-span-5 flex flex-col justify-center">
 				<div className="flex items-center gap-4">
 					<h5 className="text-[1.125rem]">{t("title")}</h5>
