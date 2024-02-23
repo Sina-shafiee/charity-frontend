@@ -12,7 +12,7 @@ export const Hero = () => {
 	const t = useTranslations("Index.Hero");
 
 	return (
-		<div className="relative grid h-screen max-h-[840px] place-content-center bg-[url('/images/landing-hero-pattern.webp')] bg-cover bg-center bg-no-repeat">
+		<section className="relative grid h-screen max-h-[840px] place-content-center bg-[url('/images/landing-hero-pattern.webp')] bg-cover bg-center bg-no-repeat">
 			<RightPath className="absolute bottom-0 right-0 h-auto w-80" />
 			<LeftPath className="absolute bottom-0 left-0 h-72 w-auto" />
 			<section className="relative z-40 mt-20 flex w-full flex-col text-center font-semibold text-white">
@@ -42,6 +42,6 @@ export const Hero = () => {
 					</Button>
 				</div>
 			</section>
-		</div>
+		</section>
 	);
 };
