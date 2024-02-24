@@ -13,7 +13,7 @@ import Providers from "../providers";
 
 const montserratFont = Montserrat({
 	subsets: ["latin"],
-	weight: ["400", "500"],
+	weight: ["400", "500", "600", "700"],
 	variable: "--font-body",
 });
 
@@ -25,7 +25,7 @@ const playFair = Playfair_Display({
 
 const vazirMatn = Vazirmatn({
 	subsets: ["arabic"],
-	weight: ["400", "500"],
+	weight: ["400", "500", "600", "700"],
 	variable: "--font-body",
 });
 
