@@ -91,7 +91,7 @@
 	h4,
 	h5,
 	h6 {
-		@apply text-black;
+		@apply text-[#212121];
 	}
 	h1 {
 		@apply text-5xl font-bold leading-[3.75rem];
