@@ -42,6 +42,10 @@ export default {
 			title: "Latest Causes",
 			subTitle: "Find the popular cause",
 		},
+		Testimonials: {
+			title: "Our Testimonials",
+			subTitle: "What People Say",
+		},
 	},
 	Navbar: {
 		home: "Home",
@@ -67,5 +71,10 @@ export default {
 		raised: "Raised: $600",
 		goal: "Goal: $1,000",
 		donate: "Donate Now!",
+	},
+	DummyTestimonial: {
+		author: "Cameron Williamson",
+		job: "Founder",
+		text: "I'm truly grateful for the impact this charity has had on the lives of so many. Their dedication to making a difference in the world is inspiring. I've seen firsthand the positive changes they bring to communities in need. Supporting this charity is not just a donation; it's an investment in a brighter future for all.",
 	},
 } as const;
