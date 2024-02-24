@@ -23,10 +23,11 @@ export const CausesSlider = ({ subTitle, ...props }: Props) => {
 		<Carousel
 			opts={{
 				align: "start",
+				loop: true,
 			}}
 			className="w-full"
 		>
-			<div className="mt-4 flex items-center justify-between">
+			<div className="mt-2 flex items-center justify-between">
 				<h2 className="text-black">{subTitle}</h2>
 				<div className="flex  items-center gap-2">
 					<CarouselPrevious
