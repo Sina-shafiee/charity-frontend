@@ -1,5 +1,6 @@
 import {
 	About,
+	Articles,
 	Causes,
 	FunFacts,
 	Hero,
@@ -18,6 +19,7 @@ const LandingPage = async () => {
 			<Causes />
 			<TestMonials />
 			<FunFacts />
+			<Articles />
 			<div className="mt-10" />
 			<p className="container text-justify ">
 				{t("lorem")}

@@ -64,6 +64,10 @@ export default {
 				},
 			],
 		},
+		Articles: {
+			title: "Latest Articles",
+			subTitle: "Articles You May Read",
+		},
 	},
 	Navbar: {
 		home: "Home",
@@ -94,5 +98,11 @@ export default {
 		author: "Cameron Williamson",
 		job: "Founder",
 		text: "I'm truly grateful for the impact this charity has had on the lives of so many. Their dedication to making a difference in the world is inspiring. I've seen firsthand the positive changes they bring to communities in need. Supporting this charity is not just a donation; it's an investment in a brighter future for all.",
+	},
+	DummyArticle: {
+		author: "Esther Howard",
+		title: "The Impact of Charity: Expectations vs. Reality",
+		text: "In the realm of charitable giving, the impact often transcends expectations. Every contribution, no matter how small, has the power to transform lives. From providing shelter to the homeless, to offering education to underprivileged children, each act of kindness resonates profoundly in the lives of those in need. Join us in making a difference today.",
+		read_more: "Read More",
 	},
 } as const;
