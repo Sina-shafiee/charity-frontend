@@ -6,19 +6,23 @@ import {
 	CarouselPrevious,
 	CauseCard,
 } from "@/component/ui";
+import { getScopedI18n } from "@/locale/server";
 
 interface Props {
-	title: string;
-	content: string;
-	category: string;
-	donation: string;
-	raised: string;
-	goal: string;
-	donate: string;
 	subTitle: string;
 }
 
-export const CausesSlider = ({ subTitle, ...props }: Props) => {
+export const CausesSlider = async ({ subTitle }: Props) => {
+	const t = await getScopedI18n("DummyCard");
+	const dummyCard = {
+		category: t("category"),
+		title: t("title"),
+		content: t("content"),
+		donation: t("donation"),
+		goal: t("goal"),
+		raised: t("raised"),
+		donate: t("donate"),
+	};
 	return (
 		<Carousel
 			opts={{
@@ -40,11 +44,11 @@ export const CausesSlider = ({ subTitle, ...props }: Props) => {
 					/>
 				</div>
 			</div>
-			<CarouselContent className="mt-8 cursor-move">
+			<CarouselContent className="mt-8 cursor-grabbing">
 				{Array.from({ length: 7 }).map((_, index) => {
 					return (
 						<CarouselItem key={index.toFixed(1)} className="basis-1/4">
-							<CauseCard {...props} />
+							<CauseCard {...dummyCard} />
 						</CarouselItem>
 					);
 				})}
