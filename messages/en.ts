@@ -46,6 +46,24 @@ export default {
 			title: "Our Testimonials",
 			subTitle: "What People Say",
 		},
+		FunFacts: {
+			title: "Our Fun Facts",
+			subTitle: "We Believe that We can Save More Lifes with you",
+			Facts: [
+				{
+					title: "People rised",
+				},
+				{
+					title: "Volunteer",
+				},
+				{
+					title: "Poor People Saved",
+				},
+				{
+					title: "Country Member",
+				},
+			],
+		},
 	},
 	Navbar: {
 		home: "Home",
