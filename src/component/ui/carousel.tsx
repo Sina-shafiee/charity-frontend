@@ -7,6 +7,7 @@ import type { UseEmblaCarouselType } from "embla-carousel-react";
 import useEmblaCarousel from "embla-carousel-react";
 import * as React from "react";
 
+import type { ButtonProps } from "@/component/ui/button";
 import { Button } from "@/component/ui/button";
 import { cn } from "@/utils";
 
@@ -276,10 +277,82 @@ const CarouselNext = React.forwardRef<
 });
 CarouselNext.displayName = "CarouselNext";
 
+interface CarouselDotsProps {
+	buttonProps?: ButtonProps & {
+		activeClass?: string;
+		defaultClass?: string;
+	};
+}
+
+const CarouselDots = React.forwardRef<
+	HTMLDivElement,
+	CarouselDotsProps & React.ComponentProps<typeof Button>
+>(({ buttonProps, className, ...props }, ref) => {
+	const { api: emblaApi } = useCarousel();
+
+	const [selectedIndex, setSelectedIndex] = React.useState(0);
+	const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
+
+	const onDotButtonClick = React.useCallback(
+		(index: number) => {
+			if (!emblaApi) return;
+			emblaApi.scrollTo(index);
+		},
+		[emblaApi],
+	);
+
+	const onInit = React.useCallback((emblaApi: CarouselApi) => {
+		setScrollSnaps(emblaApi?.scrollSnapList() ?? []);
+	}, []);
+
+	const onSelect = React.useCallback((emblaApi: CarouselApi) => {
+		setSelectedIndex(emblaApi?.selectedScrollSnap() ?? 0);
+	}, []);
+
+	React.useEffect(() => {
+		if (!emblaApi) return;
+
+		onInit(emblaApi);
+		onSelect(emblaApi);
+		emblaApi.on("reInit", onInit);
+		emblaApi.on("reInit", onSelect);
+		emblaApi.on("select", onSelect);
+	}, [emblaApi, onInit, onSelect]);
+
+	return (
+		<section
+			ref={ref}
+			className={cn("flex items-center justify-center gap-1 py-4", className)}
+			{...props}
+		>
+			{scrollSnaps.map((_, index) => {
+				return (
+					<Button
+						{...buttonProps}
+						onClick={() => {
+							onDotButtonClick(index);
+						}}
+						size="sm"
+						className={cn(
+							"rounded-md px-4 h-0 py-[4px] transition-colors duration-500",
+							selectedIndex === index
+								? buttonProps?.activeClass ?? "bg-primary"
+								: buttonProps?.defaultClass ?? "bg-white",
+						)}
+						key={index.toFixed(1)}
+					/>
+				);
+			})}
+		</section>
+	);
+});
+CarouselDots.displayName = "CarouselDots";
+
 export {
 	Carousel,
 	type CarouselApi,
 	CarouselContent,
+	CarouselDots,
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
