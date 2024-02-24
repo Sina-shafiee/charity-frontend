@@ -40,7 +40,7 @@ export const CauseCard = ({
 			/>
 			<CardContent className="mt-6">
 				<p className="text-sm font-medium text-primary">{category}</p>
-				<h4 className="mt-4 font-heading text-xl">{title}</h4>
+				<h4 className="mt-4 line-clamp-2 font-heading text-xl">{title}</h4>
 				<p className="mt-4 line-clamp-2 text-sm">{content}</p>
 				<div className="mt-4 flex items-center justify-between text-sm">
 					<p className="text-sm">{donation}</p>
