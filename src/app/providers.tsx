@@ -3,7 +3,7 @@
 import { DirectionProvider } from "@radix-ui/react-direction";
 import type { ReactNode } from "react";
 
-import type { Direction } from "./[locale]/layout";
+import type { Direction } from "@/locale/helper";
 
 interface Props {
 	children: ReactNode;
