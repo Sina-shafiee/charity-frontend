@@ -14,5 +14,6 @@ module.exports = init({
 	},
 	rules: {
 		"@typescript-eslint/no-unnecessary-condition": "off",
+		"tailwindcss/no-custom-classname": "off",
 	},
 });
