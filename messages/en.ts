@@ -81,6 +81,29 @@ export default {
 		},
 		login: "login",
 	},
+	Footer: {
+		keep_in_touch: "Let's keep in touch!",
+		reponse_rate:
+			"Find us on any of these platforms, we respond 1-2 business days.",
+		useful_links: "Useful Links",
+		UseFulLinks: {
+			home: "Home",
+			causes: "Cuases",
+			blog: "Blog",
+			photo_gallery: "Photo Gallery",
+		},
+		other_resources: "Other Resources",
+		OtherResuorces: {
+			about: "About",
+			contact: "Contact Us",
+		},
+		address: "Address",
+		Address: "2464 Royal Ln. Mesa, New Jersey 45463",
+		copy_right: {
+			text: "Developed with ☕ By",
+			author: "Sina Shafiee",
+		},
+	},
 	lorem:
 		"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor sed quam at tempus. Nunc in diam eu sapien scelerisque scelerisque. Maecenas in fringilla libero. Phasellus auctor pulvinar nulla vel maximus. Etiam dignissim erat turpis, quis venenatis quam fermentum et. Donec id justo est. Donec placerat egestas placerat. Praesent convallis scelerisque ante id ullamcorper.",
 

@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from "react";
 import { Fragment } from "react";
 
-import { Header } from "@/component/layout/main";
+import { Footer, Header } from "@/component/layout/main";
 
 interface Props {
 	children: ReactNode;
@@ -12,6 +12,7 @@ const LandingLayout: FC<Props> = ({ children }) => {
 		<Fragment>
 			<Header />
 			{children}
+			<Footer />
 		</Fragment>
 	);
 };
