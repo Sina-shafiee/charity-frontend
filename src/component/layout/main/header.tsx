@@ -1,11 +1,10 @@
-import Link from "next/link";
-
-import Logo from "@/component/icon/logo.svg";
 import { Button } from "@/component/ui";
 import { getScopedI18n } from "@/locale/server";
 import { languages, navbarLinks } from "@/utils/constant";
 
 import { LanguageSelect } from "./languageSelect";
+import { Logo } from "./logo";
+import { MobileNavbar } from "./mobileNavbar";
 import { Navbar } from "./navbar";
 
 export const Header = async () => {
@@ -29,16 +28,14 @@ export const Header = async () => {
 	return (
 		<header className="container relative mx-auto">
 			<div className="p-container absolute left-0 top-0 z-30 mx-auto mt-[35px] flex h-12 w-full items-center justify-between text-white">
-				<Link href="/">
-					<Logo className="h-[33px] w-[133px]" />
-				</Link>
+				<Logo />
 				<Navbar links={translatedLinks} />
-				<div className="flex items-center gap-2">
-					<Button size="sm" className="text-base">
+				<div className="flex items-center lg:gap-2">
+					<Button size="sm" className="hidden text-base lg:block">
 						{t("login")}
 					</Button>
-
 					<LanguageSelect languages={translatedLanguages} />
+					<MobileNavbar loginButtonLabel={t("login")} links={translatedLinks} />
 				</div>
 			</div>
 		</header>

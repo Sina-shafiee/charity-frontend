@@ -6,4 +6,5 @@ export * from "./carousel";
 export * from "./causeCard";
 export * from "./dropdownMenu";
 export * from "./funFactCard";
+export * from "./sheet";
 export * from "./testimonialCard";

@@ -31,7 +31,7 @@ export const LanguageSelect: React.FC<Props> = ({ languages }) => {
 				<Button
 					size="sm"
 					variant="link"
-					className="m-0 text-white transition-all duration-300 will-change-transform hover:scale-105"
+					className="text-white transition-all duration-300 will-change-transform hover:scale-105"
 				>
 					{locale === "fa" ? (
 						<FaIcon className="size-10" />

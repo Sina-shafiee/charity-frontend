@@ -14,7 +14,7 @@ export const Navbar = ({ links }: Props) => {
 	const isRtl = useDirection() === "rtl";
 
 	return (
-		<nav>
+		<nav className="hidden lg:inline-block">
 			<ul className="mt-1 flex items-center gap-x-5">
 				{links.map((link) => {
 					return (
