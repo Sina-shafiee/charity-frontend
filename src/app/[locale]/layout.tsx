@@ -15,24 +15,28 @@ const montserratFont = Montserrat({
 	subsets: ["latin"],
 	weight: ["400", "500", "600", "700"],
 	variable: "--font-body",
+	display: "swap",
 });
 
 const playFair = Playfair_Display({
 	subsets: ["latin"],
 	weight: ["600", "700", "900"],
 	variable: "--font-heading",
+	display: "swap",
 });
 
 const vazirMatn = Vazirmatn({
 	subsets: ["arabic"],
 	weight: ["400", "500", "600", "700"],
 	variable: "--font-body",
+	display: "swap",
 });
 
 const alexandria = Alexandria({
 	subsets: ["arabic"],
 	weight: ["600", "700"],
 	variable: "--font-heading",
+	display: "swap",
 });
 
 interface Props {
