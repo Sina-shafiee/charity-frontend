@@ -80,7 +80,7 @@ export default {
 			farsi: "فارسی",
 			english: "انگلیسی",
 		},
-		login: "ورود",
+		login: "ورود به سایت",
 	},
 	Footer: {
 		keep_in_touch: "با ما در ارتباط باشید!",

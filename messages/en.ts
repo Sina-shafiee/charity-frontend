@@ -74,12 +74,12 @@ export default {
 		causes: "Causes",
 		about: "About",
 		contact: "Contact",
-		blog: "Blogs",
+		blog: "Blog",
 		Language: {
 			farsi: "Farsi",
 			english: "English",
 		},
-		login: "login",
+		login: "Login",
 	},
 	Footer: {
 		keep_in_touch: "Let's keep in touch!",
