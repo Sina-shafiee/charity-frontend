@@ -1,9 +1,4 @@
-import {
-	Alexandria,
-	Montserrat,
-	Playfair_Display,
-	Vazirmatn,
-} from "next/font/google";
+import { Alexandria, Barlow, Montserrat, Vazirmatn } from "next/font/google";
 import type { FC, ReactNode } from "react";
 
 import type { Direction } from "@/locale/helper";
@@ -18,7 +13,7 @@ const montserratFont = Montserrat({
 	display: "swap",
 });
 
-const playFair = Playfair_Display({
+const barlow = Barlow({
 	subsets: ["latin"],
 	weight: ["600", "700", "900"],
 	variable: "--font-heading",
@@ -54,7 +49,7 @@ interface Fonts {
 
 const fonts: Record<Direction, Fonts> = {
 	rtl: { body: vazirMatn, heading: alexandria },
-	ltr: { body: montserratFont, heading: playFair },
+	ltr: { body: montserratFont, heading: barlow },
 };
 
 const MainLayout: FC<Props> = ({ children, params: { locale } }) => {
