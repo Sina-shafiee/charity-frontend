@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Alexandria, Barlow, Montserrat, Vazirmatn } from "next/font/google";
 import type { FC, ReactNode } from "react";
 
@@ -50,6 +51,75 @@ interface Fonts {
 const fonts: Record<Direction, Fonts> = {
 	rtl: { body: vazirMatn, heading: alexandria },
 	ltr: { body: montserratFont, heading: barlow },
+};
+
+const APP_NAME = "Give Live";
+const APP_DEFAULT_TITLE = "Give Live";
+const APP_TITLE_TEMPLATE = "%s - Give Live";
+const APP_DESCRIPTION =
+	"Empowering communities, transforming lives. Give Live is your gateway to making a meaningful impact through collective generosity. Join us in creating positive change worldwide.";
+
+export const metadata: Metadata = {
+	applicationName: APP_NAME,
+	metadataBase: new URL("https://chairty.sina-shafiee.ink"),
+	alternates: {
+		canonical: "/",
+		languages: {
+			"en-US": "/en",
+			"fa-IR": "/fa",
+		},
+	},
+	title: {
+		default: APP_DEFAULT_TITLE,
+		template: APP_TITLE_TEMPLATE,
+	},
+	icons: [
+		{
+			rel: "icon",
+			url: "/icon/favicon-16x16.png",
+			sizes: "16x16",
+			type: "image/png",
+		},
+		{
+			rel: "icon",
+			url: "/icon/favicon-32x32.png",
+			sizes: "32x32",
+			type: "image/png",
+		},
+		{
+			rel: "icon",
+			url: "/icon/favicon.ico",
+			sizes: "32x32",
+			type: "image/x-icon",
+		},
+	],
+	description: APP_DESCRIPTION,
+	manifest: "/manifest.json",
+	appleWebApp: {
+		capable: true,
+		statusBarStyle: "default",
+		title: APP_DEFAULT_TITLE,
+	},
+	formatDetection: {
+		telephone: false,
+	},
+	openGraph: {
+		type: "website",
+		siteName: APP_NAME,
+		title: {
+			default: APP_DEFAULT_TITLE,
+			template: APP_TITLE_TEMPLATE,
+		},
+		description: APP_DESCRIPTION,
+	},
+	twitter: {
+		card: "summary",
+		title: {
+			default: APP_DEFAULT_TITLE,
+			template: APP_TITLE_TEMPLATE,
+		},
+		description: APP_DESCRIPTION,
+	},
 };
 
 const MainLayout: FC<Props> = ({ children, params: { locale } }) => {

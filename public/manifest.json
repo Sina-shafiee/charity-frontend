@@ -1,0 +1,48 @@
+{
+	"theme_color": "#219c7f",
+	"background_color": "#ffffff",
+	"display": "standalone",
+	"scope": "/",
+	"start_url": "/",
+	"name": "Give Live",
+	"short_name": "GL",
+	"description": "Empowering communities, transforming lives. Give Live is your gateway to making a meaningful impact through collective generosity. Join us in creating positive change worldwide.",
+	"icons": [
+		{
+			"src": "/icon/icon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon/icon-256x256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon/icon-384x384.png",
+			"sizes": "384x384",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon/icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"screenshots": [
+		{
+			"src": "/icon/icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/gif",
+			"form_factor": "wide",
+			"label": "Wonder Widgets"
+		},
+		{
+			"src": "/icon/icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/gif",
+			"form_factor": "narrow",
+			"label": "Wonder Widgets"
+		}
+	]
+}

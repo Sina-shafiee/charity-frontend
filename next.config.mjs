@@ -1,3 +1,10 @@
+import nextPwa from "@ducanh2912/next-pwa";
+
+const withPWA = nextPwa({
+	dest: "public",
+	register: true,
+	scope: "/",
+});
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	webpack(config) {
@@ -30,4 +37,4 @@ const addSvgrRules = (config) => {
 
 	fileLoaderRule.exclude = /\.svg$/i;
 };
-export default nextConfig;
+export default withPWA(nextConfig);
