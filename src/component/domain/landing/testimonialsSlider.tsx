@@ -12,7 +12,10 @@ import { getScopedI18n } from "@/locale/server";
 export const TestimonialsSlider = async () => {
 	const t = await getScopedI18n("DummyTestimonial");
 	return (
-		<Carousel className="container mx-auto mt-12 w-full" opts={{ loop: true }}>
+		<Carousel
+			className="container mx-auto mt-12 w-full p-12 sm:px-0"
+			opts={{ loop: true }}
+		>
 			<div className="relative">
 				<CarouselContent className="max-h-max cursor-grabbing">
 					{Array.from({ length: 5 }).map((_, index) => (

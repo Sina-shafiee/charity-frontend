@@ -97,7 +97,7 @@
 		@apply text-5xl font-bold leading-[3.75rem];
 	}
 	h2 {
-		@apply text-[2.43rem] font-bold leading-[3.12rem];
+		@apply text-2xl sm:text-3xl leading-10 md:text-4xl md:leading-[2.9rem] lg:text-[2.43rem] font-bold lg:leading-[3.12rem];
 	}
 	h3 {
 		@apply text-[2rem] font-bold leading-[2.62rem];

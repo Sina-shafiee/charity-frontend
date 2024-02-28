@@ -50,22 +50,24 @@ export const Footer = async () => {
 	const t = await getScopedI18n("Footer");
 	return (
 		<Fragment>
-			<section className="container mx-auto mt-32 grid grid-cols-12 gap-24">
+			<section className="container mx-auto mt-32 grid grid-cols-1 gap-24 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 				{partners.map(({ pic }) => {
 					return (
-						<Image
-							alt="partner"
-							key={pic.src}
-							placeholder="blur"
-							src={pic}
-							className="col-span-3"
-						/>
+						<div key={pic.src} className="relative col-span-1 h-36">
+							<Image
+								alt="partner"
+								placeholder="blur"
+								src={pic}
+								fill
+								className="inset-0 size-full object-contain"
+							/>
+						</div>
 					);
 				})}
 			</section>
 			<footer className="relative mx-auto mt-28 bg-[#22262F] pb-6 pt-24 text-white">
-				<div className="container mx-auto grid grid-cols-6">
-					<div className="col-span-3">
+				<div className="container mx-auto grid grid-cols-1 gap-12 sm:grid-cols-3 xl:grid-cols-5">
+					<div className="col-span-1 sm:col-span-3 xl:col-span-2">
 						<LogoIcon className="w-44" />
 						<h4 className="mt-8 font-heading text-2xl text-white">
 							{t("keep_in_touch")}
@@ -89,7 +91,7 @@ export const Footer = async () => {
 							})}
 						</div>
 					</div>
-					<div className="col-span-1">
+					<div className="col-span-1 sm:col-span-1">
 						<h4 className="mb-2 block text-lg font-semibold text-white">
 							{t("useful_links")}
 						</h4>
@@ -108,7 +110,7 @@ export const Footer = async () => {
 							})}
 						</ul>
 					</div>
-					<div className="col-span-1">
+					<div className="col-span-1 sm:col-span-1">
 						<h4 className="mb-2 block text-lg font-semibold text-white">
 							{t("other_resources")}
 						</h4>
@@ -127,7 +129,7 @@ export const Footer = async () => {
 							})}
 						</ul>
 					</div>
-					<div className="col-span-1">
+					<div className="col-span-1 sm:col-span-1">
 						<h4 className="mb-2 block text-lg font-semibold text-white">
 							{t("address")}
 						</h4>

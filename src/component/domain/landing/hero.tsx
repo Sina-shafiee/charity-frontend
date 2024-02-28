@@ -10,15 +10,15 @@ export const Hero = async () => {
 	const isRtl = getCurrentLocale() === "fa";
 	const t = await getScopedI18n("Index.Hero");
 	return (
-		<section className="relative grid h-screen max-h-[840px] place-content-center bg-[url('/images/landing-hero-pattern.webp')] bg-cover bg-center bg-no-repeat">
+		<section className="relative grid max-h-[840px] min-h-screen place-content-center bg-gray-500 bg-[url('/images/landing-hero-pattern.webp')] bg-cover bg-center bg-no-repeat pt-16 sm:pt-4">
 			<RightPath className="absolute bottom-0 right-0 h-auto w-80" />
 			<LeftPath className="absolute bottom-0 left-0 h-72 w-auto" />
-			<section className="relative z-40 mt-28 flex w-full flex-col text-center font-semibold">
+			<section className="relative z-40 flex w-full flex-col px-2 py-20 text-center font-semibold sm:mt-28 sm:px-0">
 				<h5 className={cn(isRtl ? "mb-4" : "mb-2", "text-white")}>{t("h5")}</h5>
 				<h1
 					className={cn(
 						isRtl ? "max-w-[840px]" : "max-w-[770px]",
-						"mx-auto flex flex-col text-white text-[72px] capitalize leading-[90px]",
+						"mx-auto flex flex-col text-white text-4xl leading-normal sm:text-[72px] capitalize sm:leading-[90px]",
 					)}
 				>
 					{t("heading")}
@@ -31,11 +31,15 @@ export const Hero = async () => {
 				>
 					{t("h6")}
 				</h6>
-				<div className="mt-10 flex w-full items-center justify-center gap-8">
-					<Button className="max-w-max">
+				<div className="mx-auto mt-4 flex w-full max-w-96 flex-col items-center justify-center gap-4 px-14 sm:max-w-full sm:flex-row sm:gap-8">
+					<Button className="w-full sm:max-w-max">
 						<Link href="/causes">{t("main-cta")}</Link>
 					</Button>
-					<Button variant="outline" className="max-w-max text-white" asChild>
+					<Button
+						variant="outline"
+						className="w-full text-white sm:max-w-max"
+						asChild
+					>
 						<Link href="/about">{t("secondary-cta")}</Link>
 					</Button>
 				</div>

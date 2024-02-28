@@ -10,8 +10,8 @@ import { getScopedI18n } from "@/locale/server";
 export const Welcome = async () => {
 	const t = await getScopedI18n("Index.Welcome");
 	return (
-		<section className="container mx-auto mt-[7.5rem] grid grid-cols-12 gap-[3.75rem]">
-			<section className="col-span-5 flex flex-col justify-center">
+		<section className="container mx-auto mt-[7.5rem] gap-[3.75rem] xl:grid xl:grid-cols-12">
+			<section className="flex w-full flex-col justify-center xl:col-span-5">
 				<div className="flex items-center gap-4">
 					<h5 className="text-[1.125rem]">{t("title")}</h5>
 					<LineIcon />
@@ -51,8 +51,8 @@ export const Welcome = async () => {
 					</div>
 				</div>
 			</section>
-			<section className="col-span-7 grid h-full grid-cols-9 grid-rows-11 place-content-center">
-				<section className="grid-welcome-start relative h-96 overflow-hidden border-4 border-gray-300/95 bg-gray-200">
+			<section className="h-full pt-20 lg:grid lg:grid-cols-9 lg:grid-rows-11 lg:place-content-center xl:col-span-7 xl:pt-0">
+				<section className="grid-welcome-start relative h-96 w-full overflow-hidden border-4 border-gray-300/95 bg-gray-200">
 					<Image
 						fill
 						className="size-full object-cover"
@@ -61,7 +61,7 @@ export const Welcome = async () => {
 						alt="Charity worker"
 					/>
 				</section>
-				<section className="grid-welcome-end relative h-96 border-4 border-gray-300/95 bg-[#EDF7F5] py-10 pe-4 ps-8">
+				<section className="grid-welcome-end relative hidden h-96 border-4 border-gray-300/95 bg-[#EDF7F5] py-10 pe-4 ps-8 lg:block">
 					<Image
 						fill
 						className="size-full object-cover"

@@ -54,14 +54,14 @@ export const FunFacts = async () => {
 			>
 				{t("subTitle")}
 			</h2>
-			<section className="mt-14 grid grid-cols-12 gap-6">
+			<section className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4">
 				{facts.map(({ count, icon, title }, index) => {
 					return (
 						<FunFactCard
 							count={count}
 							icon={icon}
 							title={title}
-							className="col-span-3"
+							className="col-span-1"
 							key={index.toFixed(1)}
 						/>
 					);

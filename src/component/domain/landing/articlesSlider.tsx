@@ -28,9 +28,9 @@ export const ArticlesSlider = async ({ subTitle }: Props) => {
 			}}
 			className="w-full"
 		>
-			<div className="mt-2 flex items-center justify-between">
-				<h2 className="text-black">{subTitle}</h2>
-				<div className="flex  items-center gap-2">
+			<div className="mt-2 flex flex-wrap items-center justify-between md:flex-nowrap">
+				<h2 className="w-full max-w-96 text-black">{subTitle}</h2>
+				<div className="flex w-full items-center justify-end gap-2">
 					<CarouselPrevious
 						className="static size-10 -translate-y-0 border-transparent bg-muted hover:bg-muted hover:text-black"
 						variant="outline"
@@ -44,7 +44,10 @@ export const ArticlesSlider = async ({ subTitle }: Props) => {
 			<CarouselContent className="mt-8 cursor-grabbing">
 				{Array.from({ length: 7 }).map((_, index) => {
 					return (
-						<CarouselItem key={index.toFixed(1)} className="basis-1/3">
+						<CarouselItem
+							key={index.toFixed(1)}
+							className="basis-full sm:basis-1/2 lg:basis-1/3"
+						>
 							<ArticleCard {...article} />
 						</CarouselItem>
 					);

@@ -334,10 +334,11 @@ const CarouselDots = React.forwardRef<
 						}}
 						size="sm"
 						className={cn(
-							"rounded-md px-4 h-0 py-[4px] transition-colors duration-500",
+							"rounded-md h-2 p-0 m-0 will-change-transform transition-all duration-500",
 							selectedIndex === index
 								? buttonProps?.activeClass ?? "bg-primary"
 								: buttonProps?.defaultClass ?? "bg-white",
+							selectedIndex === index ? "w-8" : "w-4",
 						)}
 						key={index.toFixed(1)}
 					/>

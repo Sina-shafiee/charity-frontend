@@ -44,7 +44,10 @@ export const MobileNavbar = ({ links, loginButtonLabel }: Props) => {
 					<span className="sr-only">Hamburger Menu</span>
 				</Button>
 			</SheetTrigger>
-			<SheetContent side={isRtl ? "right" : "left"}>
+			<SheetContent
+				className="w-full sm:max-w-96"
+				side={isRtl ? "right" : "left"}
+			>
 				<div className="flex w-full flex-col gap-y-6 px-4 py-8">
 					{links.map(({ href, title }) => {
 						return (
