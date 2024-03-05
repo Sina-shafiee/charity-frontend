@@ -9,6 +9,8 @@ export const env = createEnv({
 	 */
 	server: {
 		OPEN_API_SPEC_URL: z.string().url(),
+		NEXTAUTH_URL: z.string(),
+		NEXTAUTH_SECRET: z.string(),
 	},
 	/*
 	 * Environment variables available on the client (and server).
@@ -27,5 +29,7 @@ export const env = createEnv({
 	runtimeEnv: {
 		OPEN_API_SPEC_URL: process.env.OPEN_API_SPEC_URL,
 		NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+		NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+		NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
 	},
 });

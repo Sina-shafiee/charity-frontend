@@ -5,8 +5,8 @@ import {
 	FunFacts,
 	Hero,
 	TestMonials,
+	Welcome,
 } from "@/component/domain/landing";
-import { Welcome } from "@/component/domain/landing/welcome";
 
 const LandingPage = () => {
 	return (

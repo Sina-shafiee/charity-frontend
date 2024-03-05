@@ -1,6 +1,7 @@
 "use client";
 
 import { DirectionProvider } from "@radix-ui/react-direction";
+import { SessionProvider } from "next-auth/react";
 import type { ReactNode } from "react";
 
 import type { Direction } from "@/locale/helper";
@@ -11,7 +12,11 @@ interface Props {
 }
 
 const Providers = ({ children, dir }: Props) => {
-	return <DirectionProvider dir={dir}>{children}</DirectionProvider>;
+	return (
+		<SessionProvider>
+			<DirectionProvider dir={dir}>{children}</DirectionProvider>;
+		</SessionProvider>
+	);
 };
 
 export default Providers;

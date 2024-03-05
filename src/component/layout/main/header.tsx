@@ -1,8 +1,8 @@
-import { Button } from "@/component/ui";
 import { getScopedI18n } from "@/locale/server";
 import { languages, navbarLinks } from "@/utils/constant";
 
 import { LanguageSelect } from "./languageSelect";
+import { LoginButton } from "./loginButton";
 import { Logo } from "./logo";
 import { MobileNavbar } from "./mobileNavbar";
 import { Navbar } from "./navbar";
@@ -31,9 +31,8 @@ export const Header = async () => {
 				<Logo />
 				<Navbar links={translatedLinks} />
 				<div className="flex items-center lg:gap-2">
-					<Button size="sm" className="hidden text-base lg:block">
-						{t("login")}
-					</Button>
+					<LoginButton title={t("login")} />
+
 					<LanguageSelect languages={translatedLanguages} />
 					<MobileNavbar loginButtonLabel={t("login")} links={translatedLinks} />
 				</div>
