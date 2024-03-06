@@ -16,4 +16,5 @@ module.exports = init({
 		"@typescript-eslint/no-unnecessary-condition": "off",
 		"tailwindcss/no-custom-classname": "off",
 	},
+	extends: ["plugin:@tanstack/eslint-plugin-query/recommended"],
 });

@@ -35,6 +35,9 @@ dependencies:
   '@t3-oss/env-nextjs':
     specifier: 0.9.2
     version: 0.9.2(typescript@5.3.3)(zod@3.22.4)
+  '@tanstack/react-query':
+    specifier: 5.25.0
+    version: 5.25.0(react@18.2.0)
   class-variance-authority:
     specifier: 0.7.0
     version: 0.7.0
@@ -94,6 +97,9 @@ devDependencies:
   '@svgr/webpack':
     specifier: 8.1.0
     version: 8.1.0(typescript@5.3.3)
+  '@tanstack/eslint-plugin-query':
+    specifier: 5.20.1
+    version: 5.20.1(eslint@8.56.0)(typescript@5.3.3)
   '@types/node':
     specifier: '20'
     version: 20.11.19
@@ -3006,6 +3012,31 @@ packages:
       '@t3-oss/env-core': 0.9.2(typescript@5.3.3)(zod@3.22.4)
       typescript: 5.3.3
       zod: 3.22.4
+    dev: false
+
+  /@tanstack/eslint-plugin-query@5.20.1(eslint@8.56.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-oIp7Wh90KHOm1FKCvcv87fiD2H96xo/crFrlhbvqBzR2f0tMEGOK/ANKMGNFQprd6BT6lyZhQPlOEkFdezsjIg==}
+    peerDependencies:
+      eslint: ^8.0.0
+    dependencies:
+      '@typescript-eslint/utils': 6.20.0(eslint@8.56.0)(typescript@5.3.3)
+      eslint: 8.56.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
+  /@tanstack/query-core@5.25.0:
+    resolution: {integrity: sha512-vlobHP64HTuSE68lWF1mEhwSRC5Q7gaT+a/m9S+ItuN+ruSOxe1rFnR9j0ACWQ314BPhBEVKfBQ6mHL0OWfdbQ==}
+    dev: false
+
+  /@tanstack/react-query@5.25.0(react@18.2.0):
+    resolution: {integrity: sha512-u+n5R7mLO7RmeiIonpaCRVXNRWtZEef/aVZ/XGWRPa7trBIvGtzlfo0Ah7ZtnTYfrKEVwnZ/tzRCBcoiqJ/tFw==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      '@tanstack/query-core': 5.25.0
+      react: 18.2.0
     dev: false
 
   /@trysound/sax@0.2.0:
