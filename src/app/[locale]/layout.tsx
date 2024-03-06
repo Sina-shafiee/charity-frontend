@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Alexandria, Barlow, Montserrat, Vazirmatn } from "next/font/google";
 import type { FC, ReactNode } from "react";
 
-import type { Direction } from "@/locale/helper";
+import type { Direction, Locale } from "@/locale/helper";
 import { directions } from "@/locale/helper";
 
 import Providers from "../providers";
@@ -37,7 +37,7 @@ const alexandria = Alexandria({
 
 interface Props {
 	children: ReactNode;
-	params: { locale: string };
+	params: { locale: Locale };
 }
 
 interface VariableFont {
@@ -133,7 +133,9 @@ const MainLayout: FC<Props> = ({ children, params: { locale } }) => {
 			dir={dir}
 		>
 			<body className="font-body">
-				<Providers dir={dir}>{children}</Providers>
+				<Providers locale={locale} dir={dir}>
+					{children}
+				</Providers>
 			</body>
 		</html>
 	);

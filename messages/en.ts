@@ -128,4 +128,25 @@ export default {
 		text: "In the realm of charitable giving, the impact often transcends expectations. Every contribution, no matter how small, has the power to transform lives. From providing shelter to the homeless, to offering education to underprivileged children, each act of kindness resonates profoundly in the lives of those in need. Join us in making a difference today.",
 		read_more: "Read More",
 	},
+	Validation: {
+		required: "{inputname} is required",
+	},
+	Login: {
+		login: "Login",
+		noAccount: "Don't have an account?",
+		register: "register now account.",
+		pageTitle: "Login to your account.",
+	},
+	Register: {
+		pageTitle: "Create new acoount",
+		register: "Create account",
+		haveAccount: "Already have an account?",
+		login: "click here to login",
+	},
+	InputNames: {
+		email: "email",
+		password: "password",
+		firstName: "first name",
+		lastName: "last name",
+	},
 } as const;
