@@ -130,23 +130,31 @@ export default {
 	},
 	Validation: {
 		required: "{inputname} is required",
+		invalid: "Provided {inputname} is not valid",
 	},
 	Login: {
 		login: "Login",
 		noAccount: "Don't have an account?",
 		register: "register now account.",
-		pageTitle: "Login to your account.",
+		pageTitle: "Welcome Back",
+		resetPassword: "Reset password",
 	},
 	Register: {
-		pageTitle: "Create new acoount",
+		pageTitle: "Create New Account",
 		register: "Create account",
 		haveAccount: "Already have an account?",
 		login: "click here to login",
+	},
+	ConfirmEmail: {
+		pageTitle: "Confirm Your Account",
+		confirmEmail: "submit code",
+		emailConfirmed: "Your email confirmed successfully",
 	},
 	InputNames: {
 		email: "email",
 		password: "password",
 		firstName: "first name",
 		lastName: "last name",
+		token: "Confirmation code",
 	},
 } as const;

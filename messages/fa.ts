@@ -80,7 +80,7 @@ export default {
 			farsi: "فارسی",
 			english: "انگلیسی",
 		},
-		login: "ورود به سایت",
+		login: "وارد شوید",
 	},
 	Footer: {
 		keep_in_touch: "با ما در ارتباط باشید!",
@@ -130,12 +130,14 @@ export default {
 	},
 	Validation: {
 		required: "{inputname} ضروری میباشد",
+		invalid: "فیلد {inputname} درست نمیباشد",
 	},
 	Login: {
 		login: "ورود به سایت",
 		noAccount: "حساب کاربری ندارید؟",
 		register: "ثبت نام کنید",
 		pageTitle: "وارد حساب کاربری خود شوید",
+		resetPassword: "فراموشی رمز عبور",
 	},
 	Register: {
 		pageTitle: "حساب کاربری جدید بسازید",
@@ -143,10 +145,16 @@ export default {
 		haveAccount: "حساب کاربری دارید؟",
 		login: "برای ورود کلیک کنید",
 	},
+	ConfirmEmail: {
+		pageTitle: "ایمیل خود را تایید کنید",
+		confirmEmail: "ارسال درخواست",
+		emailConfirmed: "ایمیل شما با موفقیت تایید شد",
+	},
 	InputNames: {
 		email: "آدرس ایمیل",
 		password: "رمز عبور",
 		firstName: "نام",
 		lastName: "نام خانوادگی",
+		token: "کد تایید",
 	},
 } as const;
