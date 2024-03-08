@@ -120,6 +120,12 @@
 	}
 }
 
+@layer utilities {
+	.dir-ltr {
+		direction: ltr !important;
+	}
+}
+
 /* Fix for logo.svg's color dark light switch */
 .logo_svg__path1 {
 	@apply fill-red-600 stroke-red-600 dark:fill-blue-600 dark:stroke-blue-600;
