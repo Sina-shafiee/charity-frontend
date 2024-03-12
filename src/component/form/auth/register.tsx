@@ -58,8 +58,6 @@ export const RegisterForm = () => {
 			} else {
 				toast.error(t("Validation.serverError"));
 			}
-		} finally {
-			form.reset();
 		}
 	};
 

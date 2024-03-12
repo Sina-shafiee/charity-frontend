@@ -26,7 +26,7 @@ export const ConfirmEmailForm = () => {
 	const searchParams = useSearchParams();
 	const emailValue = searchParams.get("sub");
 
-	const registerQuery = useConfirmEmailMutation();
+	const confirmEmailMutation = useConfirmEmailMutation();
 
 	const form = useForm<ConfirmEmailSchema>({
 		resolver: zodResolver(confirmEmailSchema(t)),
@@ -37,8 +37,14 @@ export const ConfirmEmailForm = () => {
 	});
 
 	const onSubmit = async (payload: ConfirmEmailSchema) => {
+		if (!payload.email) {
+			router.push("/auth/login");
+			toast.error(t("ConfirmEmail.invalidReq"));
+			return;
+		}
+
 		try {
-			await registerQuery.mutateAsync(payload);
+			await confirmEmailMutation.mutateAsync(payload);
 			router.push(`/auth/login`);
 			toast.success(t("ConfirmEmail.emailConfirmed"));
 		} catch (error) {

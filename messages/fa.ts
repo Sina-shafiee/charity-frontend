@@ -134,7 +134,7 @@ export default {
 	Validation: {
 		required: "{inputname} ضروری میباشد",
 		invalid: "فیلد {inputname} درست نمیباشد",
-		serverError: "خطا در ارتباط با سرور",
+		serverError: "خطا در برقراری ارتباط با سرور",
 	},
 	Login: {
 		login: "ورود به سایت",
@@ -154,6 +154,7 @@ export default {
 		pageTitle: "ایمیل خود را تایید کنید",
 		confirmEmail: "ارسال درخواست",
 		emailConfirmed: "ایمیل شما با موفقیت تایید شد",
+		invalidReq: "داده های وارد شده معتبر نیست",
 	},
 	InputNames: {
 		email: "آدرس ایمیل",

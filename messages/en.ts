@@ -154,6 +154,7 @@ export default {
 		pageTitle: "Confirm Your Account",
 		confirmEmail: "submit code",
 		emailConfirmed: "Your email confirmed successfully",
+		invalidReq: "Provided data is invalid",
 	},
 	InputNames: {
 		email: "email",

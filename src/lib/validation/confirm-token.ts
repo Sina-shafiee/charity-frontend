@@ -4,12 +4,7 @@ import type { TranslateFunc } from "@/types/translateFunc";
 
 export const confirmEmailSchema = (t: TranslateFunc) =>
 	z.object({
-		email: z.string().min(
-			1,
-			t("Validation.required", {
-				inputname: t("InputNames.email"),
-			}),
-		),
+		email: z.string().nullable(),
 		token: z
 			.string()
 			.min(

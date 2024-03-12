@@ -9,32 +9,26 @@ const registerUser = async (
 	payload: RegisterSchema,
 	lang: Locale,
 ): Promise<void> => {
-	try {
-		const response = await fetch(
-			`${env.NEXT_PUBLIC_API_URL}/auth/email/register`,
-			{
-				method: "POST",
-				body: JSON.stringify(payload),
-				headers: {
-					"Content-Type": "application/json",
-					"x-application-lang": lang,
-				},
+	const response = await fetch(
+		`${env.NEXT_PUBLIC_API_URL}/auth/email/register`,
+		{
+			method: "POST",
+			body: JSON.stringify(payload),
+			headers: {
+				"Content-Type": "application/json",
+				"x-application-lang": lang,
 			},
-		);
+		},
+	);
 
-		if (response.status === 204) {
-			return;
-		}
+	if (response.status === 204) {
+		return;
+	}
 
-		const data = await response.json();
+	const data = await response.json();
 
-		if (response.status > 299) {
-			throw new Error(JSON.stringify(data));
-		}
-	} catch (error) {
-		if (error instanceof Error) {
-			throw new Error(error.message);
-		}
+	if (response.status > 299) {
+		throw new Error(JSON.stringify(data));
 	}
 };
 
