@@ -8,9 +8,12 @@ export const env = createEnv({
 	 * Will throw if you access these variables on the client.
 	 */
 	server: {
+		APP_URL: z.string(),
+		NODE_ENV: z.enum(["development", "production", "test"]),
 		OPEN_API_SPEC_URL: z.string().url(),
-		NEXTAUTH_URL: z.string(),
-		NEXTAUTH_SECRET: z.string(),
+		SESSION_COOKIE_NAME: z.string(),
+		SESSION_SECRET: z.string().min(32),
+		SESSION_TTL: z.string(),
 	},
 	/*
 	 * Environment variables available on the client (and server).
@@ -27,9 +30,12 @@ export const env = createEnv({
 	 * 💡 You'll get type errors if not all variables from `server` & `client` are included here.
 	 */
 	runtimeEnv: {
+		APP_URL: process.env.APP_URL,
+		NODE_ENV: process.env.NODE_ENV,
 		OPEN_API_SPEC_URL: process.env.OPEN_API_SPEC_URL,
 		NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
-		NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-		NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+		SESSION_COOKIE_NAME: process.env.SESSION_COOKIE_NAME,
+		SESSION_SECRET: process.env.SESSION_SECRET,
+		SESSION_TTL: process.env.SESSION_TTL,
 	},
 });

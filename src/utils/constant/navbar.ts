@@ -12,6 +12,14 @@ export const navbarLinks = [
 		i18nKey: "about",
 	},
 	{
+		href: "/user",
+		i18nKey: "userDashboard",
+	},
+	{
+		href: "/admin",
+		i18nKey: "adminDashboard",
+	},
+	{
 		href: "/contact",
 		i18nKey: "contact",
 	},

@@ -1,4 +1,4 @@
-import { getScopedI18n } from "@/locale/server";
+import { getCurrentLocale, getScopedI18n } from "@/locale/server";
 import { languages, navbarLinks } from "@/utils/constant";
 
 import { LanguageSelect } from "./languageSelect";
@@ -9,16 +9,20 @@ import { Navbar } from "./navbar";
 
 export const Header = async () => {
 	const t = await getScopedI18n("Navbar");
-	/**
-	 * i dont want to use "useTranslations" hook in
-	 * client components and since functions are not serilaized
-	 * i translate links on server and send the array
-	 * of translated link to clinet component
-	 */
-	const translatedLinks = navbarLinks.map((link) => ({
-		title: t(link.i18nKey as any),
-		href: link.href,
-	}));
+	const locale = getCurrentLocale();
+	const translatedLinks = navbarLinks.map((link) => {
+		// eslint-disable-next-line fp/no-let
+		let href = link.href;
+
+		if (link.href === "/") {
+			href = `${link.href}${locale}`;
+		}
+
+		return {
+			title: t(link.i18nKey as any),
+			href,
+		};
+	});
 	const translatedLanguages = languages.map(({ lang, i18nKey }) => {
 		return {
 			lang,
@@ -31,8 +35,10 @@ export const Header = async () => {
 				<Logo />
 				<Navbar links={translatedLinks} />
 				<div className="flex items-center lg:gap-2">
-					<LoginButton title={t("login")} />
-
+					<LoginButton
+						loginTitle={t("login")}
+						dashboardTitle={t("dashboard")}
+					/>
 					<LanguageSelect languages={translatedLanguages} />
 					<MobileNavbar loginButtonLabel={t("login")} links={translatedLinks} />
 				</div>

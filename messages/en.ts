@@ -75,11 +75,14 @@ export default {
 		about: "About",
 		contact: "Contact",
 		blog: "Blog",
+		userDashboard: "User dashboard",
+		adminDashboard: "Admin dashboard",
 		Language: {
 			farsi: "Farsi",
 			english: "English",
 		},
 		login: "Login",
+		dashboard: "Panel",
 	},
 	Footer: {
 		keep_in_touch: "Let's keep in touch!",
@@ -131,19 +134,21 @@ export default {
 	Validation: {
 		required: "{inputname} is required",
 		invalid: "Provided {inputname} is not valid",
+		serverError: "Connection to server failed",
 	},
 	Login: {
 		login: "Login",
-		noAccount: "Don't have an account?",
-		register: "register now account.",
+		noAccount: "Register new account",
 		pageTitle: "Welcome Back",
 		resetPassword: "Reset password",
+		verificationSent: "Email verification token sent to your email",
 	},
 	Register: {
 		pageTitle: "Create New Account",
 		register: "Create account",
 		haveAccount: "Already have an account?",
 		login: "click here to login",
+		verificationSent: "Email verification token sent to your email",
 	},
 	ConfirmEmail: {
 		pageTitle: "Confirm Your Account",

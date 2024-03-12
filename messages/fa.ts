@@ -75,12 +75,15 @@ export default {
 		causes: "کمپین ها",
 		about: "درباره ما",
 		contact: "ارتباط با ما",
+		userDashboard: "داشبورد یوزر",
+		adminDashboard: "داشبورد ادمین",
 		blog: "وبلاگ",
 		Language: {
 			farsi: "فارسی",
 			english: "انگلیسی",
 		},
 		login: "وارد شوید",
+		dashboard: "داشبورد",
 	},
 	Footer: {
 		keep_in_touch: "با ما در ارتباط باشید!",
@@ -131,19 +134,21 @@ export default {
 	Validation: {
 		required: "{inputname} ضروری میباشد",
 		invalid: "فیلد {inputname} درست نمیباشد",
+		serverError: "خطا در ارتباط با سرور",
 	},
 	Login: {
 		login: "ورود به سایت",
-		noAccount: "حساب کاربری ندارید؟",
-		register: "ثبت نام کنید",
+		noAccount: "ساخت حساب کاربری جدید",
 		pageTitle: "وارد حساب کاربری خود شوید",
 		resetPassword: "فراموشی رمز عبور",
+		verificationSent: "کد تایید به آدرس ایمیل شما ارسال شد",
 	},
 	Register: {
 		pageTitle: "حساب کاربری جدید بسازید",
 		register: "ساخت اکانت",
 		haveAccount: "حساب کاربری دارید؟",
 		login: "برای ورود کلیک کنید",
+		verificationSent: "کد تایید به آدرس ایمیل شما ارسال شد",
 	},
 	ConfirmEmail: {
 		pageTitle: "ایمیل خود را تایید کنید",

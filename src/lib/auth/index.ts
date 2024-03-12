@@ -1,74 +1,48 @@
-import type { AuthOptions } from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
+import type { SessionOptions } from "iron-session";
+import { getIronSession } from "iron-session";
+import { cookies } from "next/headers";
 
-import { env } from "@/lib/env";
-import { getCurrentLocale } from "@/locale/server";
+import type { Roles } from "@/types/enums";
 
-export const authOptions = {
-	providers: [
-		CredentialsProvider({
-			credentials: {
-				email: { type: "email" },
-				password: { type: "password" },
-			},
-			async authorize(credentials) {
-				const lang = getCurrentLocale();
-				const loginResponse = await fetch(
-					`${env.NEXT_PUBLIC_API_URL}/auth/email/login`,
-					{
-						body: JSON.stringify({
-							email: credentials?.email ?? "",
-							password: credentials?.password ?? "",
-						}),
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json",
-							"x-application-lang": lang,
-						},
-						credentials: "include",
-					},
-				);
+import { env } from "../env";
 
-				const user = await loginResponse.json();
+export const ADMIN_ROUTES_REGEX = /^\/admin(?:\/\w+)*$/;
+export const USER_ROUTES_REGEX = /^\/user(?:\/\w+)*$/;
+export const AUTH_ROUTES_REGEX = /^\/auth(?:\/\w+)*$/;
 
-				if (!loginResponse.ok && loginResponse.status > 499) {
-					return null;
-				}
+interface User {
+	id: number;
+	firstName: string;
+	lastName: string;
+	email: string;
+	role: {
+		id: Roles;
+		name: string;
+	};
+}
+export interface SessionData {
+	user: User | undefined;
+	token: string | undefined;
+	tokenExpires: number | undefined;
+}
 
-				if (!loginResponse.ok && loginResponse.status < 499) {
-					throw new Error(JSON.stringify(user.errors));
-				}
-
-				return user;
-			},
-		}),
-	],
-	callbacks: {
-		jwt({ token, user }) {
-			if (user) {
-				return {
-					...token,
-					user: {
-						...user,
-					},
-				};
-			}
-
-			return token;
-		},
-		session({ session, token }) {
-			if (token && session.user) {
-				session.user = token.user;
-			}
-
-			return session;
-		},
+export const sessionOptions: SessionOptions = {
+	cookieName: env.SESSION_COOKIE_NAME,
+	password: env.SESSION_SECRET,
+	ttl: Number.parseInt(env.SESSION_TTL, 10),
+	cookieOptions: {
+		httpOnly: true,
+		secure: env.NODE_ENV === "production",
+		sameSite: "lax",
+		path: "/",
 	},
-	session: {
-		strategy: "jwt",
-	},
-	pages: {
-		signIn: "/auth/login",
-	},
-	secret: env.NEXTAUTH_SECRET,
-} satisfies AuthOptions;
+};
+
+/**
+ * access session on server components, server actions, api routes and middleware
+ * @returns SessionData
+ */
+export async function getSession() {
+	const session = await getIronSession<SessionData>(cookies(), sessionOptions);
+	return session;
+}

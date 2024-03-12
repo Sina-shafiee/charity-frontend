@@ -2,7 +2,6 @@
 
 import { DirectionProvider } from "@radix-ui/react-direction";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { SessionProvider } from "next-auth/react";
 import NextTopLoader from "nextjs-toploader";
 import type { ReactNode } from "react";
 import { useState } from "react";
@@ -20,25 +19,23 @@ interface Props {
 const Providers = ({ children, dir, locale }: Props) => {
 	const [queryClient] = useState(new QueryClient());
 	return (
-		<SessionProvider>
-			<QueryClientProvider client={queryClient}>
-				<I18nProviderClient locale={locale}>
-					<DirectionProvider dir={dir}>
-						<NextTopLoader
-							color="#219c7f"
-							initialPosition={0.08}
-							crawlSpeed={200}
-							crawl
-							showSpinner={false}
-							shadow="0 0 10px #2299DD,0 0 5px #2299DD"
-							zIndex={1600}
-						/>
-						{children}
-						<Toaster />
-					</DirectionProvider>
-				</I18nProviderClient>
-			</QueryClientProvider>
-		</SessionProvider>
+		<QueryClientProvider client={queryClient}>
+			<I18nProviderClient locale={locale}>
+				<DirectionProvider dir={dir}>
+					<NextTopLoader
+						color="#219c7f"
+						initialPosition={0.08}
+						crawlSpeed={200}
+						crawl
+						showSpinner={false}
+						shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+						zIndex={1600}
+					/>
+					{children}
+					<Toaster />
+				</DirectionProvider>
+			</I18nProviderClient>
+		</QueryClientProvider>
 	);
 };
 

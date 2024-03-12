@@ -1,9 +1,9 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
@@ -22,6 +22,8 @@ import { loginSchema } from "@/lib/validation";
 import { useI18n } from "@/locale/client";
 
 export const LoginForm = () => {
+	const searchParams = useSearchParams();
+	const queryClinet = useQueryClient();
 	const router = useRouter();
 	const t = useI18n();
 
@@ -34,19 +36,23 @@ export const LoginForm = () => {
 	});
 
 	const onSubmit = async ({ email, password }: LoginSchema) => {
-		const result = await signIn("credentials", {
-			email,
-			password,
-			redirect: false,
-		});
+		const callbackUrl = searchParams.get("callbackUrl");
 
-		if (result?.status === 200) {
-			router.push("/");
-			return;
-		}
+		try {
+			const response = await fetch("/api/auth/login", {
+				body: JSON.stringify({ email, password }),
+				method: "POST",
+			});
 
-		if (result?.error) {
-			const errors = JSON.parse(result.error);
+			const result = await response.json();
+
+			if (result?.status === 200) {
+				await queryClinet.invalidateQueries({ queryKey: ["user-session"] });
+				router.push(callbackUrl ?? "/");
+				return;
+			}
+
+			const errors: unknown = result?.errors;
 
 			if (Array.isArray(errors)) {
 				errors.forEach((value: { [key: string]: string }) => {
@@ -58,11 +64,16 @@ export const LoginForm = () => {
 				});
 			} else if (typeof errors === "string") {
 				if (errors === "emailVerificationTokenSent") {
-					router.push(`/auth/confirm-email?email=${email}`);
+					router.push(`/auth/confirm-email?sub=${btoa(email)}`);
+					toast.info(t("Login.verificationSent"));
 					return;
 				}
 				toast.error(errors);
+			} else {
+				toast.error(t("Validation.serverError"));
 			}
+		} catch (error) {
+			toast.error(t("Validation.serverError"));
 		}
 	};
 
@@ -113,12 +124,22 @@ export const LoginForm = () => {
 						);
 					}}
 				/>
-				<p className="mb-2 mt-4 text-sm">
-					{t("Login.noAccount")}{" "}
-					<Link className="text-indigo-500" href="/auth/register">
-						{t("Login.register")}
+				<div className="mb-2 mt-4 flex items-center justify-between text-sm">
+					<p className="text-sm">
+						<Link
+							className="underline underline-offset-4"
+							href="/auth/register"
+						>
+							{t("Login.noAccount")}{" "}
+						</Link>
+					</p>
+					<Link
+						className="underline underline-offset-4"
+						href="/auth/reset-password"
+					>
+						{t("Login.resetPassword")}
 					</Link>
-				</p>
+				</div>
 				<Button className="mt-4 h-12 rounded-sm">{t("Login.login")}</Button>
 			</form>
 		</Form>

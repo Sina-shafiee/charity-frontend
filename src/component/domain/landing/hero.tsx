@@ -10,7 +10,7 @@ export const Hero = async () => {
 	const isRtl = getCurrentLocale() === "fa";
 	const t = await getScopedI18n("Index.Hero");
 	return (
-		<section className="relative grid max-h-[840px] min-h-screen place-content-center bg-gray-500 bg-[url('/images/landing-hero-pattern.webp')] bg-cover bg-center bg-no-repeat pt-16 sm:pt-4">
+		<section className="relative grid max-h-[840px] min-h-screen place-content-center bg-gray-600 bg-[url('/images/landing-hero-pattern.webp')] bg-cover bg-center bg-no-repeat pt-16 sm:pt-0">
 			<RightPath className="absolute bottom-0 right-0 h-auto w-80" />
 			<LeftPath className="absolute bottom-0 left-0 h-72 w-auto" />
 			<section className="relative z-40 flex w-full flex-col px-2 py-20 text-center font-semibold sm:mt-28 sm:px-0">
