@@ -32,7 +32,7 @@ export const sessionOptions: SessionOptions = {
 	ttl: Number.parseInt(env.SESSION_TTL, 10),
 	cookieOptions: {
 		httpOnly: true,
-		secure: false,
+		secure: env.NODE_ENV === "production",
 		sameSite: "lax",
 		path: "/",
 	},
