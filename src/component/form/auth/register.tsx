@@ -20,6 +20,7 @@ import { useRegisterUserMutation } from "@/hooks/api";
 import type { RegisterSchema } from "@/lib/validation";
 import { registerSchema } from "@/lib/validation";
 import { useI18n } from "@/locale/client";
+import { invalidEntityErrorHandler } from "@/utils";
 
 export const RegisterForm = () => {
 	const t = useI18n();
@@ -46,13 +47,7 @@ export const RegisterForm = () => {
 			const { errors } = JSON.parse((error as Error).message);
 
 			if (Array.isArray(errors)) {
-				errors.forEach((value: { [key: string]: string }) => {
-					const [key] = Object.keys(value);
-					form.setError(key as keyof RegisterSchema, {
-						message: value[key],
-						type: "API_ERROR",
-					});
-				});
+				invalidEntityErrorHandler(errors, form.setError);
 			} else if (typeof errors === "string") {
 				toast.error(errors);
 			} else {

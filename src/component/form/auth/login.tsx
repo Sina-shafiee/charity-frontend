@@ -20,6 +20,7 @@ import {
 import type { LoginSchema } from "@/lib/validation";
 import { loginSchema } from "@/lib/validation";
 import { useI18n } from "@/locale/client";
+import { invalidEntityErrorHandler } from "@/utils";
 
 export const LoginForm = () => {
 	const searchParams = useSearchParams();
@@ -55,13 +56,7 @@ export const LoginForm = () => {
 			const errors: unknown = result?.errors;
 
 			if (Array.isArray(errors)) {
-				errors.forEach((value: { [key: string]: string }) => {
-					const [key] = Object.keys(value);
-					form.setError(key as keyof LoginSchema, {
-						message: value[key],
-						type: "API_ERROR",
-					});
-				});
+				invalidEntityErrorHandler(errors, form.setError);
 			} else if (typeof errors === "string") {
 				if (errors === "emailVerificationTokenSent") {
 					router.push(`/auth/confirm-email?sub=${btoa(email)}`);

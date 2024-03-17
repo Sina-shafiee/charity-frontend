@@ -18,6 +18,7 @@ import { useConfirmEmailMutation } from "@/hooks/api";
 import type { ConfirmEmailSchema } from "@/lib/validation/";
 import { confirmEmailSchema } from "@/lib/validation/";
 import { useI18n } from "@/locale/client";
+import { invalidEntityErrorHandler } from "@/utils";
 
 export const ConfirmEmailForm = () => {
 	const router = useRouter();
@@ -53,13 +54,7 @@ export const ConfirmEmailForm = () => {
 			);
 
 			if (Array.isArray(errors)) {
-				errors.forEach((value: { [key: string]: string }) => {
-					const [key] = Object.keys(value);
-					form.setError(key as keyof ConfirmEmailSchema, {
-						message: value[key],
-						type: "API_ERROR",
-					});
-				});
+				invalidEntityErrorHandler(errors, form.setError);
 			} else if (typeof errors === "string") {
 				if (statusCode === 409) {
 					toast.error(errors);
